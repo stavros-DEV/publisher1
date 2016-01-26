@@ -42,6 +42,19 @@ public class SecurityFilter implements Filter
 			chain.doFilter(req, resp);
 			return;
 		}
+		
+		// Allow access to web service.
+		if (servletPath.equals("/publish"))
+		{
+			chain.doFilter(req, resp);
+			return;
+		}
+		
+		if (servletPath.equals("/unpublish"))
+		{
+		   chain.doFilter(req, resp);
+		   return;
+		}
 	    
 		// All other functionality requires authentication.
 		HttpSession session = req.getSession();

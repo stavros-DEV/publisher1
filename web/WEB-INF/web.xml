@@ -12,6 +12,8 @@ version="2.4">
       <web-resource-collection>
          <web-resource-name>publisher1</web-resource-name>
          <url-pattern>/login</url-pattern>
+         <url-pattern>/publish</url-pattern>
+         <url-pattern>/unpublish</url-pattern>
       </web-resource-collection>
       <user-data-constraint> 
          <transport-guarantee>CONFIDENTIAL</transport-guarantee>
@@ -133,4 +135,24 @@ version="2.4">
       <servlet-name>delete-news-item</servlet-name>
       <url-pattern>/delete-news-item</url-pattern>
 	</servlet-mapping>
+	
+	<servlet>
+      <servlet-name>publish-service</servlet-name>
+      <servlet-class>publisher.ws.PublishNewsItemService</servlet-class>
+   	</servlet>
+   	<servlet-mapping>
+      <servlet-name>publish-service</servlet-name>
+      <url-pattern>/publish</url-pattern>
+   	</servlet-mapping>
+   	
+   	<servlet>
+      <servlet-name>unpublish-service</servlet-name>
+      <servlet-class>publisher.ws.UnpublishNewsItemService</servlet-class>
+   	</servlet>
+
+   	<servlet-mapping>
+      <servlet-name>unpublish-service</servlet-name>
+      <url-pattern>/unpublish</url-pattern>
+   	</servlet-mapping>
+   	
 </web-app>

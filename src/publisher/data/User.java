@@ -2,6 +2,11 @@ package publisher.data;
 
 public class User
 {
+	private Long id;
+	private String username;
+	private String password;
+	private String accessKey;
+	
 	public Long getId()
 	{
 		return id;
@@ -26,7 +31,12 @@ public class User
 	{
 		this.password = password;
 	}
-	private Long id;
-	private String username;
-	private String password;
+	public String getAccessKey()
+	{
+		return accessKey;
+	}
+	public void setAccessKey(String accessKey)
+	{
+		this.accessKey = accessKey;
+	}
 }
