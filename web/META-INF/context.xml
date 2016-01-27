@@ -1,0 +1,12 @@
+<Context path="/publisher1" docBase="/home/stavros/workspace-mars/publisher1/web" >
+<Resource name="datasource" 
+            type="javax.sql.DataSource"
+            auth="Container"
+            maxActive="10"
+            maxIdle="3" 
+            maxWait="10000"
+            username="publisher" 
+            password="publisher" 
+            driverClassName="com.mysql.jdbc.Driver"
+            url="jdbc:mysql://localhost:3306/publisher?autoReconnect=true" />
+</Context>
