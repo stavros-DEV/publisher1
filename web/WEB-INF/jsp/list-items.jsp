@@ -1,11 +1,13 @@
 <%@ page import="java.util.Iterator" %> 
 <%@ page import="publisher.data.NewsItem" %>
-<jsp:useBean id="list" scope="request" type="java.util.List" />
+<%@ page import="publisher.data.User" %>
+<jsp:useBean id="list" scope="request" type="java.util.List<NewsItem>" />
+<jsp:useBean id="user" class="publisher.data.User" scope="session"/>
 
 <%@ include file="top.inc" %>
+	<p>Welcome <%=user.getUsername()%></p>
 	<a href="create-news-item">Create News Item</a>
 <%@ include file="middle.inc" %>
-	
 	<ul>
 		<%
 			Iterator<NewsItem> it = list.iterator();
