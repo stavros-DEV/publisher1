@@ -1,4 +1,4 @@
-package publisher.web;
+package publisher.listeners;
 
 import java.io.IOException;
 
@@ -64,7 +64,7 @@ public class SecurityFilter implements Filter
 			// User is logged in.
 			chain.doFilter(req, resp);
 			return;
-		}  
+		}
 		
 		// Request is not authorized.
 		resp.sendRedirect("login");
