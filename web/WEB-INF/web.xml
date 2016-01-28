@@ -4,7 +4,13 @@ xmlns="http://java.sun.com/xml/ns/j2ee"
 xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
 xsi:schemaLocation="http://java.sun.com/xml/ns/j2ee http://java.sun.com/xml/ns/j2ee/web-app_2_4.xsd"
 version="2.4">
-	
+	<!-- no longer needed, check annotation @WebListener at Init.java
+	<listener>
+      <listener-class>publisher.listeners.Init</listener-class>
+   	</listener>
+   	-->
+   	
+   	<!-- no longer needed, check annotation @ServletSecurity at LoginServlet.java, Publish and Unpublish
    	<security-constraint>
       <web-resource-collection>
          <web-resource-name>publisher1</web-resource-name>
@@ -16,7 +22,9 @@ version="2.4">
          <transport-guarantee>CONFIDENTIAL</transport-guarantee>
       </user-data-constraint>
     </security-constraint>
+	-->
 
+	<!-- no longer needed, check annotation @WebFilter at SecurityFilter.java
    	<filter>
       <filter-name>security-filter</filter-name>
       <filter-class>publisher.listeners.SecurityFilter</filter-class>
@@ -24,90 +32,6 @@ version="2.4">
    	<filter-mapping>
       <filter-name>security-filter</filter-name>
       <url-pattern>/*</url-pattern>
-   	</filter-mapping>
-   	
-   	<servlet>
-   	  <servlet-name>list</servlet-name>
-   	  <servlet-class>publisher.web.ListServlet</servlet-class>
-   	  <init-param>
-   	  	<param-name>jsp</param-name>
-   	  	<param-value>/WEB-INF/jsp/list-items.jsp</param-value>
-   	  </init-param>
-   	</servlet>
-   	<servlet-mapping>
-   	  <servlet-name>list</servlet-name>
-   	  <url-pattern>/list-news-items</url-pattern>
-   	</servlet-mapping>
-   	
-   	<servlet>
-   	  <servlet-name>view-news-item</servlet-name>
-   	  <servlet-class>publisher.web.ViewNewsItemServlet</servlet-class>
-   	  <init-param>
-   	  	<param-name>jsp</param-name>
-   	  	<param-value>/WEB-INF/jsp/view-news-item.jsp</param-value>
-   	  </init-param>
- 	</servlet>
- 	<servlet-mapping>
-      <servlet-name>view-news-item</servlet-name>
-      <url-pattern>/view-news-item</url-pattern>
- 	</servlet-mapping>
- 	
- 	<servlet>
-   	  <servlet-name>edit-news-item</servlet-name>
-   	  <servlet-class>publisher.web.EditNewsItemServlet</servlet-class>
-   	  <init-param>
-   	  	<param-name>jsp</param-name>
-   	  	<param-value>/WEB-INF/jsp/edit-news-item.jsp</param-value>
-   	  </init-param>
-	</servlet>
-	<servlet-mapping>
-   	  <servlet-name>edit-news-item</servlet-name>
-   	  <url-pattern>/edit-news-item</url-pattern>
-	</servlet-mapping>
- 	
- 	<servlet>
-   	  <servlet-name>create-news-item</servlet-name>
-   	  <servlet-class>publisher.web.CreateNewsItemServlet</servlet-class>
-   	  <init-param>
-   	  	<param-name>jsp</param-name>
-   	  	<param-value>/WEB-INF/jsp/edit-news-item.jsp</param-value>
-   	  </init-param>
-	</servlet>
-	<servlet-mapping>
-      <servlet-name>create-news-item</servlet-name>
-      <url-pattern>/create-news-item</url-pattern>
-	</servlet-mapping>
+   	</filter-mapping>-->
 	
-	<servlet>
-   	  <servlet-name>delete-news-item</servlet-name>
-   	  <servlet-class>publisher.web.DeleteNewsItemServlet</servlet-class>
-   	  <init-param>
-   	  	<param-name>jsp</param-name>
-   	  	<param-value>/WEB-INF/jsp/delete-news-item.jsp</param-value>
-   	  </init-param>
-	</servlet>
-	<servlet-mapping>
-      <servlet-name>delete-news-item</servlet-name>
-      <url-pattern>/delete-news-item</url-pattern>
-	</servlet-mapping>
-	
-	<servlet>
-      <servlet-name>publish-service</servlet-name>
-      <servlet-class>publisher.ws.PublishNewsItemService</servlet-class>
-   	</servlet>
-   	<servlet-mapping>
-      <servlet-name>publish-service</servlet-name>
-      <url-pattern>/publish</url-pattern>
-   	</servlet-mapping>
-   	
-   	<servlet>
-      <servlet-name>unpublish-service</servlet-name>
-      <servlet-class>publisher.ws.UnpublishNewsItemService</servlet-class>
-   	</servlet>
-
-   	<servlet-mapping>
-      <servlet-name>unpublish-service</servlet-name>
-      <url-pattern>/unpublish</url-pattern>
-   	</servlet-mapping>
-   	
 </web-app>

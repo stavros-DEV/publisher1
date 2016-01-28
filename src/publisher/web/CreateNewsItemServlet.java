@@ -4,12 +4,18 @@ import java.io.IOException;
 import java.util.Map;
 
 import javax.servlet.ServletException;
+import javax.servlet.annotation.WebInitParam;
+import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 import publisher.data.NewsItem;
 import publisher.data.NewsItemDAO;
 
+@WebServlet(
+	urlPatterns ="/create-news-item",
+	initParams = @WebInitParam(name="jsp", value="/WEB-INF/jsp/edit-news-item.jsp")
+)
 public class CreateNewsItemServlet extends ParentServlet
 {
 	private static final long serialVersionUID = 1L;

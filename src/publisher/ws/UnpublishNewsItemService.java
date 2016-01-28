@@ -3,6 +3,10 @@ package publisher.ws;
 import java.io.IOException;
 
 import javax.servlet.ServletException;
+import javax.servlet.annotation.HttpConstraint;
+import javax.servlet.annotation.ServletSecurity;
+import javax.servlet.annotation.WebServlet;
+import javax.servlet.annotation.ServletSecurity.TransportGuarantee;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
@@ -14,6 +18,8 @@ import publisher.data.NewsItemDAO;
 import publisher.data.User;
 import publisher.data.UserDAO;
 
+@WebServlet("/unpublish")
+@ServletSecurity(value = @HttpConstraint(transportGuarantee = TransportGuarantee.CONFIDENTIAL))
 public class UnpublishNewsItemService extends HttpServlet
 {
 	private Logger logger = Logger.getLogger(this.getClass());

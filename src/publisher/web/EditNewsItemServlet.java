@@ -5,12 +5,18 @@ import java.util.HashMap;
 import java.util.Map;
 
 import javax.servlet.ServletException;
+import javax.servlet.annotation.WebInitParam;
+import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 import publisher.data.NewsItem;
 import publisher.data.NewsItemDAO;
 
+@WebServlet(
+	urlPatterns ="/edit-news-item",
+	initParams = @WebInitParam(name="jsp", value="/WEB-INF/jsp/edit-news-item.jsp")
+)
 public class EditNewsItemServlet extends ParentServlet
 {
 	private static final long serialVersionUID = 1L;

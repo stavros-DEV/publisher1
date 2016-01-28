@@ -3,12 +3,18 @@ package publisher.web;
 import java.io.IOException;
 
 import javax.servlet.ServletException;
+import javax.servlet.annotation.WebInitParam;
+import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 import publisher.data.NewsItem;
 import publisher.data.NewsItemDAO;
 
+@WebServlet(
+	urlPatterns ="/delete-news-item",
+	initParams = @WebInitParam(name="jsp", value="/WEB-INF/jsp/delete-news-item.jsp")
+)
 public class DeleteNewsItemServlet extends ParentServlet
 {
 	private static final long serialVersionUID = 1L;

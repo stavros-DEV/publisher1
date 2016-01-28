@@ -6,6 +6,7 @@ import javax.servlet.http.HttpSessionListener;
 
 import org.apache.log4j.Logger;
 
+@WebListener
 public class SessionCounterServlet implements HttpSessionListener
 {
 	private static int totalActiveSessions;
